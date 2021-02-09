@@ -49,7 +49,17 @@ describe('Park', function() {
 
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    let dino1 = new Dinosaur('T-Rex', 'carnivore', 100);
+    let dino2 = new Dinosaur('Stegosaurus', 'herbivore', 85);
+    let dino3 = new Dinosaur('Triceratops', 'omnivore', 74);
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.mostVisitors();
+    const actual = park.mostVisitors();
+    assert.strictEqual(actual, dino1);
+  });
 
   it('should be able to find all dinosaurs of a particular species');
 

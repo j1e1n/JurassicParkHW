@@ -15,5 +15,15 @@ Park.prototype.removeDinosaur = function(dinosaur){
 };
 
 
+Park.prototype.mostVisitors = function(){
+    let mostVisited = this.dinosaurs[0];
+    for(dinosaur of this.dinosaurs){
+        if(dinosaur.guestsAttractedPerDay > mostVisited.guestsAttractedPerDay){
+            mostVisited = dinosaur;
+        }
+    } 
+    return mostVisited;
+};
+
 
 module.exports = Park;
