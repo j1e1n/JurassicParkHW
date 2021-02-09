@@ -10,8 +10,8 @@ Park.prototype.addDinosaur = function(dinosaur){
 };
 
 Park.prototype.removeDinosaur = function(dinosaur){
-            const indexOfDinosaur = this.dinosaurs.indexOf(dinosaur);
-            this.dinosaurs.splice(indexOfDinosaur, 1);
+    const indexOfDinosaur = this.dinosaurs.indexOf(dinosaur);
+    this.dinosaurs.splice(indexOfDinosaur, 1);
 };
 
 
@@ -23,6 +23,17 @@ Park.prototype.mostVisitors = function(){
         }
     } 
     return mostVisited;
+};
+
+
+Park.prototype.findDinosaurBySpecies = function(species){
+    let found = [];
+    for (dinosaur of this.dinosaurs){
+        if(dinosaur.species === species){
+            found.push(dinosaur);
+        }
+    }
+    return found
 };
 
 
