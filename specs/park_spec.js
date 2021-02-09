@@ -34,10 +34,20 @@ describe('Park', function() {
     park.addDinosaur(dino3);
     const actual = park.dinosaurs.length;
     assert.strictEqual(actual, 3);
-
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    let dino1 = new Dinosaur('T-Rex', 'carnivore', 100);
+    let dino2 = new Dinosaur('Stegosaurus', 'herbivore', 85);
+    let dino3 = new Dinosaur('Triceratops', 'omnivore', 74);
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.removeDinosaur(dino3);
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual, 2);
+
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
