@@ -7,7 +7,7 @@ describe('Park', function() {
   let park;
   
   beforeEach(function () {
-    park = new Park('Jurassic Park', 60);
+    park = new Park('Jurassic Park', 50);
   });
 
   it('should have a name', function(){
@@ -17,7 +17,7 @@ describe('Park', function() {
 
   it('should have a ticket price', function(){
     const actual = park.ticketPrice;
-    assert.strictEqual(actual, 60);
+    assert.strictEqual(actual, 50);
   });
 
   it('should have a collection of dinosaurs', function(){
@@ -95,6 +95,14 @@ describe('Park', function() {
     assert.strictEqual(actual, 67525);
   });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function(){
+    let dino1 = new Dinosaur('T-Rex', 'carnivore', 100);
+    let dino2 = new Dinosaur('Stegosaurus', 'herbivore', 85);
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.totalRevenuePerYear();
+    const actual = park.totalRevenuePerYear();
+    assert.strictEqual(actual, 3376250)
+  });
 
 });
